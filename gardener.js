@@ -17,7 +17,7 @@ function gardener() {
 	return API;
 
 	function createTreeNode(root, depth) {
-	    var angle = root.angle - Math.random()*Math.PI/2 +Math.PI/4;
+	    var angle = root.angle + Math.random()*Math.PI/2 - Math.PI/4;
 	    var x = root.x + BRANCH_SIZE*(Math.pow(.8,depth))*Math.cos(angle);
 		var y = root.y + BRANCH_SIZE*(Math.pow(.8,depth))*Math.sin(angle);
 	    return {'x':x,'y':y,'angle':angle};
