@@ -1,0 +1,33 @@
+<html><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>fractals</title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="600"></canvas>
+		
+		<script type="text/javascript" src="binaryTree.js"></script>
+		<script type="text/javascript" src="gardener.js"></script>
+		<script type="text/javascript" src="canvas.js"></script>
+		<script type="text/javascript">
+			var g = gardener();
+			g.createTree(100,8);
+			g.createTree(190,8);
+			g.createTree(310,8);
+			g.createTree(400,8);
+			g.createTree(505,8);
+			g.createTree(585,8);
+			g.createTree(690,8);
+
+
+			var context = document.getElementById('canvas').getContext("2d");
+			var canvasTool = canvasTool();
+			canvasTool.drawForest(context, g.forest);
+
+		</script>
+	
+</body></html>
