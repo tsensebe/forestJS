@@ -4,6 +4,9 @@
 		<style type="text/css">
 			canvas{
 				border: 1px solid black;
+				//background-color: #7db9e8;
+ 				background-image: linear-gradient(to bottom,#1E5799, #7db9e8); 
+
 			}
 		</style>
 	</head>
@@ -15,13 +18,23 @@
 		<script type="text/javascript" src="canvas.js"></script>
 		<script type="text/javascript">
 			var g = gardener();
-			g.createTree(100,8);
-			g.createTree(190,8);
-			g.createTree(310,8);
-			g.createTree(400,8);
-			g.createTree(505,8);
-			g.createTree(585,8);
-			g.createTree(690,8);
+			g.branchSize(30);
+			g.createTree(100,9);
+			g.createTree(190,9);
+			g.createTree(310,9);
+			g.createTree(400,9);
+			g.createTree(505,9);
+			g.createTree(585,9);
+			g.createTree(690,9);
+
+			g.createTree(50,9);
+			g.createTree(150,9);
+			g.createTree(240,9);
+			g.createTree(360,9);
+			g.createTree(450,9);
+			g.createTree(555,9);
+			g.createTree(635,9);
+			g.createTree(740,9);
 
 
 			var context = document.getElementById('canvas').getContext("2d");

@@ -34,14 +34,18 @@ function canvasTool(ctx) {
 	function drawBranch(depth, startX, startY, targetX, targetY) {
 		ctx.strokeStyle = treeColor(depth);
 		ctx.beginPath();
-		ctx.lineWidth = 10*(Math.pow(.7,depth+1));
+		ctx.lineWidth = 4*(Math.pow(.7,depth+1));
 		ctx.moveTo(startX,startY);
 		ctx.lineTo(targetX,targetY);
 		ctx.stroke();
 		ctx.closePath();
 	};
 
-	function treeColor(depth) {return "rgb(0, "+ 25*depth +", 0)";}
+	//function treeColor(depth) {return ;}
+	function treeColor(depth) {
+		if(depth < 2) return '#2C200F';
+		else return "rgb(0, "+ 25*(depth+1) +", 0)";
+	}
 	
 } 
 

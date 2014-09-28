@@ -3,10 +3,7 @@ function gardener() {
 	var BRANCH_SIZE = 50;
 	var forest = {'size':0, 'trees':[]};
 
-	var API = {};
-	API.forest = forest;
-	API.reset = function(){ forest = {'size':0, 'trees':[]}};
-	API.createTree = function(x, size) {
+	function createTree(x, size) {
 		var tree = new BinaryTree();
 		var root = {'x':x, 'y':BRANCH_SIZE, 'angle':Math.PI/2};
 		tree.setRoot(root);
@@ -14,7 +11,7 @@ function gardener() {
 		forest.trees.push(tree);
 		forest.size++;
 	};
-	return API;
+
 
 	function createTreeNode(root, depth) {
 	    var angle = root.angle + Math.random()*Math.PI/2 - Math.PI/4;
@@ -35,7 +32,18 @@ function gardener() {
 			}
 			plantTree(tree, currentDepth+1, depth-1);
 	    }
-	}    
+	}
+
+	function branchSize(size) { BRANCH_SIZE = size};
+	function reset() { forest = {'size':0, 'trees':[]}};
+
+
+	var API = {};
+	API.forest = forest;
+	API.branchSize = branchSize;
+	API.reset = reset;
+	API.createTree = createTree;
+	return API;
 }
 
 
